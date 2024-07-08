@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Regular.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --balckground-color: rgb(54, 56, 77);
+  --main-transiton: 0.3s;
+  --main-color: rgb(47, 51, 80);
+}
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--main-color);
+  font-family: "Roboto";
+  flex-direction: column;
+  position: relative;
+  perspective: 300px;
+}
+@media (max-width: 850px) {
+  .page {
+    height: 100%;
+  }
+}
+
+/* Start Content  */
+.page .content {
+  padding: 20px;
+  border-radius: 30px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 827px;
+  height: 575px;
+}
+@media (max-width: 850px) {
+  .page .content {
+    flex-direction: column-reverse;
+    padding: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.page .content > div {
+  width: calc(50% - 10px);
+}
+@media (max-width: 850px) {
+  .page .content > div {
+    width: 100%;
+  }
+}
+/* End Content  */
+
+/*  Start left div */
+.page .content > div.left {
+  padding: 65px 16px;
+  color: var(--main-color);
+  font-weight: bold;
+  height: 500px;
+  font-size: 14px;
+}
+@media (max-width: 850px) {
+  .page .content > div.left {
+    margin-top: 0;
+  }
+}
+.page .content > div.left h2 {
+  font-size: 50px;
+  margin: 0;
+  color: var(--main-color);
+}
+@media (max-width: 850px) {
+  .page .content > div.left h2 {
+    margin-top: 15px;
+  }
+}
+.page .content > div.left p {
+  line-height: 1.5;
+}
+.rules {
+  list-style: none;
+  padding: 0;
+}
+.rules li {
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+}
+.rules img {
+  margin-right: 10px;
+  width: 21px;
+  height: 21px;
+}
+.page .content > div.left .form {
+  width: 100%;
+  margin-top: 30px;
+}
+.page .content > div.left .form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+}
+.page .content > div.left .form label::after {
+  display: none;
+  content: "Not Valid";
+  position: absolute;
+  color: red;
+  text-decoration: underline;
+  right: 10px;
+  top: 0;
+}
+
+.page .content > div.left .form input[type="email"] {
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: var(--main-transiton);
+}
+.page .content > div.left .form input[type="email"]:focus {
+  outline: none;
+  border-color: #ff9245;
+}
+
+.page .content > div.left .form input[type="submit"] {
+  background-color: var(--main-color);
+  color: white;
+  display: block;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  letter-spacing: 1px;
+  transition: var(--main-transiton);
+}
+.page .content > div.left .form input[type="submit"]:hover {
+  background-image: linear-gradient(to right, #ff5969, #ff9245);
+}
+/*  End left div */
+
+/*  Start rigth div */
+.page .content > div.right .img-container {
+  width: 100%;
+  height: 645px;
+  background-image: url(../assets/images/illustration-sign-up-desktop.svg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  height: 100%;
+}
+
+@media (max-width: 850px) {
+  .page .content > div.right .img-container {
+    height: 400px;
+    background-image: url("../assets/images/illustration-sign-up-mobile.svg");
+    border-radius: 0;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+}
+/*  End rigth div */
+
+/* Start the Fotter */
+.attribution {
+  bottom: 0;
+  padding: 15px;
+  /* margin-top: 50px; */
+  /* position: relative; */
+  position: absolute;
+  margin-top: 30px;
+}
+.attribution a {
+  text-decoration: none;
+}
+.attribution a:first-child {
+  color: #ff9442;
+}
+@media (max-width: 850px) {
+  .attribution a:first-child {
+    color: #0723bc;
+  }
+}
+.attribution a:last-child {
+  color: #ff5969;
+}
+
+@media (max-width: 850px) {
+  .attribution {
+    padding: 15px;
+    position: absolute;
+    bottom: -50px;
+    font-size: 13px;
+  }
+}
+/* End the Fotter */
+
+/*  Start Elemnts from JS  */
+
+.dismissButton {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+}
+
+.dismissButton:hover {
+  background-image: linear-gradient(to right, #ff5969, #ff9245);
+}
+.succssifulContent {
+  animation-name: toZeroPosition;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  transform: translateZ(-200px);
+  animation-fill-mode: both;
+}
+@media (max-width: 850px) {
+  .succssifulContent {
+    width: 100% !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    padding: 45px !important;
+  }
+}
+
+/* Start animations  */
+@keyframes toZeroPosition {
+  /* form {
+    transform: translateZ(-200px);
+  } */
+  to {
+    transform: translateZ(0);
+  }
+}
+/* End animations  */
+
+/*  End Elemnts from JS  */
